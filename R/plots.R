@@ -2,11 +2,12 @@ rm(list=ls())
 library(tidyverse)
 library(RColorBrewer)
 
+#setwd('~/dropbox/working/taylor_host_parasite/github/') #set your working directory
+
 ###############################################################################
 ##--FIELD EVENTS--#############################################################
 ###############################################################################
 ##--LOAD DATA--##############################
-setwd('~/dropbox/working/taylor_host_parasite/github/')
 d  <- read_csv('../data/data.csv')
 dd <- read.csv('../data/replicates.csv') %>% group_by(date) %>% summarise(sdI=sd(I)/sqrt(2),sdP=sd(P)/sqrt(2))
 d  <- merge(d,dd,by='date')
@@ -36,7 +37,6 @@ load('../results/POST_events.rdata')
 ##--LAB EVENTS--###############################################################
 ###############################################################################
 ##--LOAD LAB DATA--########
-setwd('~/dropbox/working/taylor_host_parasite/github/')
 dh <- read.csv('../data/lab_heterocapsa.csv')
 ds <- read.csv('../data/lab_scrippsiella.csv')
 

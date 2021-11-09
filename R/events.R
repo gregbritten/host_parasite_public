@@ -6,7 +6,8 @@ library(RColorBrewer)
 options(mc.cores = parallel::detectCores())
 rstan_options(auto_write = TRUE)
 
-setwd('~/dropbox/working/taylor_host_parasite/github/')
+#setwd('') #set your working directory
+
 #################################################
 ## DATA #########################################
 #################################################
